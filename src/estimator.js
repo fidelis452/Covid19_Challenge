@@ -1,17 +1,17 @@
 const covid19ImpactEstimator = (data) => {
-const {
-  reportedCases, timeToElapse, periodType, totalHospitalBeds
-} = data;
-const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
-// Get factor
-let estimate;
-if (periodType === 'months') {
-  estimate = Math.ceil(timeToElapse * 30);
-} else if (periodType === 'weeks') {
-  estimate = timeToElapse * 7;
-} else {
-  estimate = timeToElapse;
-}
+  const {
+    reportedCases, timeToElapse, periodType, totalHospitalBeds
+  } = data;
+  const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
+  // Get factor
+  let estimate;
+  if (periodType === 'months') {
+    estimate = Math.ceil(timeToElapse * 30);
+  } else if (periodType === 'weeks') {
+    estimate = timeToElapse * 7;
+  } else {
+    estimate = timeToElapse;
+  }
   const factor = Math.trunc(estimate / 3);
   const result = 2 ** factor;
   const impact = {};
