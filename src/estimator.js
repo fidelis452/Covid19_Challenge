@@ -63,4 +63,4 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.dollarsInFlight = Math.trunc(severeMoneyLoss);
   return { data, impact, severeImpact };
 };
-module.exports = covid19ImpactEstimator;  
+module.exports = covid19ImpactEstimator;
